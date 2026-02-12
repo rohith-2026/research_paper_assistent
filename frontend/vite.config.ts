@@ -11,7 +11,8 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     allowedHosts: [
-      ".trycloudflare.com", // ✅ allow all trycloudflare tunnel domains
+      ".trycloudflare.com", // ✓ allow trycloudflare tunnel domains
+      ".ngrok-free.dev",    // allow ngrok tunnel domains
     ],
   },
 });
