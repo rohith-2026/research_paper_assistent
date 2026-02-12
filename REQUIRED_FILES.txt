@@ -1,0 +1,24 @@
+Required Files
+==============
+
+Backend (must have)
+-------------------
+- backend/requirements.txt
+- backend/app/main.py
+- backend/app/artifacts/shallow_mlp_model.keras
+- backend/app/artifacts/text_vectorizer_config.pkl
+- backend/app/artifacts/text_vectorizer_idf_weights.pkl
+- backend/app/artifacts/text_vectorizer_vocab.pkl
+- backend/.env  (create with required settings)
+
+Frontend (must have)
+--------------------
+- frontend/package.json
+- frontend/src/  (all app code)
+- frontend/index.html
+
+Optional but recommended
+------------------------
+- README.md
+- RUNNING.md
+- PROJECT_ANALYSIS.md

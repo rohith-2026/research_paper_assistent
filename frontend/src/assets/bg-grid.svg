@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="200" height="200">
+  <defs>
+    <style>
+      .primary { fill: #6b8e23; }
+      .stroke { stroke: #6b8e23; fill: none; stroke-width: 6; }
+      .text { fill: #6b8e23; font-family: Arial, Helvetica, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Document -->
+  <rect x="160" y="80" width="180" height="220" rx="14" class="stroke"></rect>
+  <line x1="185" y1="130" x2="315" y2="130" class="stroke"></line>
+  <line x1="185" y1="165" x2="315" y2="165" class="stroke"></line>
+  <line x1="185" y1="200" x2="285" y2="200" class="stroke"></line>
+
+  <!-- Gear (Automation) -->
+  <circle cx="320" cy="240" r="28" class="stroke"></circle>
+  <g class="stroke">
+    <line x1="320" y1="195" x2="320" y2="215"></line>
+    <line x1="320" y1="265" x2="320" y2="285"></line>
+    <line x1="275" y1="240" x2="295" y2="240"></line>
+    <line x1="345" y1="240" x2="365" y2="240"></line>
+    <line x1="292" y1="212" x2="305" y2="225"></line>
+    <line x1="335" y1="255" x2="348" y2="268"></line>
+    <line x1="292" y1="268" x2="305" y2="255"></line>
+    <line x1="335" y1="225" x2="348" y2="212"></line>
+  </g>
+
+  <!-- AI Node -->
+  <circle cx="250" cy="70" r="10" class="primary"></circle>
+  <line x1="250" y1="80" x2="250" y2="100" class="stroke"></line>
+
+  <!-- Text -->
+  <text x="250" y="360" text-anchor="middle" font-size="28" class="text" font-weight="bold">
+    RPA
+  </text>
+  <text x="250" y="395" text-anchor="middle" font-size="16" class="text">
+    Research Paper Assistant
+  </text>
+</svg>

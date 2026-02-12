@@ -1,0 +1,16 @@
+Version Control Notes
+=====================
+
+Updated: February 9, 2026
+
+Changes
+-------
+1. Added README documentation
+   - README.md
+   - README.txt
+2. Refreshed PROJECT_ANALYSIS.md to reflect current backend, frontend,
+   ML pipeline, admin tooling, and data model.
+
+Notes
+-----
+- No code changes in this update.

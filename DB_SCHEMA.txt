@@ -1,0 +1,352 @@
+MongoDB Database Schema (Observed via mongosh)
+Database: research_assistant
+Generated: 2026-02-09T07:08:36.825Z
+Total collections (tables): 36
+
+How to Construct the Database
+1) Apply schema validators and indexes:
+   - File: backend/app/db/schema_and_indexes.py
+   - Function: ensure_schema_and_indexes()
+   - This creates collections (if missing), applies validators, and ensures indexes.
+
+2) Run the setup against MongoDB:
+   - Ensure MONGO_URI and MONGO_DB are configured (see backend/.env).
+   - Start the FastAPI app (startup runs ensure_schema_and_indexes()).
+     OR
+   - Run the one-off script:
+     - File: backend/app/db/run_schema_setup.py
+     - Command: python -m app.db.run_schema_setup
+
+3) Optional seed data:
+   - One-off seed script included:
+     - File: backend/app/db/run_seed_data.py
+     - Env: ADMIN_SEED_EMAIL, ADMIN_SEED_PASSWORD
+     - Command: python -m app.db.run_seed_data
+
+Collection: abuse_flags
+- (no documents found)
+
+Collection: admin_api_keys
+- admin_id: objectId
+- created_at: date
+- hash: string
+- name: string
+- prefix: string
+- revoked: boolean
+
+Collection: admin_audit_logs
+- action: string
+- admin_id: objectId
+- created_at: date
+- meta: object
+
+Collection: admin_preferences
+- admin_id: objectId
+- audit_logging: boolean
+- updated_at: date
+
+Collection: admin_sessions
+- admin_id: objectId
+- created_at: date
+- expires_at: date or null
+- ip: string
+- last_seen_at: date
+- revoked: boolean
+- revoked_at: null
+- user_agent: string
+
+Collection: admin_settings
+- abuse_detection: boolean
+- alert_email: string
+- alert_recipients: string
+- alert_severity: string
+- api_spike_threshold: number
+- audit_logging: boolean
+- created_at: date
+- data_retention_days: number
+- digest_frequency: string
+- feature_beta: boolean
+- feature_downloads: boolean
+- feature_graph: boolean
+- feature_summaries: boolean
+- maintenance_banner: string
+- maintenance_mode: boolean
+- maintenance_window_end: null
+- maintenance_window_start: null
+- rate_limit_auth_requests: number
+- rate_limit_auth_window_seconds: number
+- rate_limit_chat_requests: number
+- rate_limit_chat_window_seconds: number
+- rate_limit_download_requests: number
+- rate_limit_download_window_seconds: number
+- rate_limit_requests: number
+- rate_limit_window_seconds: number
+- signups_enabled: boolean
+- smtp_from: string
+- smtp_host: string
+- smtp_password: string
+- smtp_port: number
+- smtp_user: string
+- ui_compact_mode: boolean
+- ui_reduced_motion: boolean
+- updated_at: date
+
+Collection: admin_users
+- created_at: date
+- email: string
+- is_active: boolean
+- last_login_at: date
+- password_hash: string
+- role: string
+- updated_at: date
+
+Collection: alerts
+- (no documents found)
+
+Collection: analytics_events
+- created_at: date
+- event: string
+- meta: object
+- user_id: objectId
+
+Collection: annotations
+- (no documents found)
+
+Collection: api_usage
+- count: number
+- date: string
+- endpoint: string
+- user_id: objectId
+
+Collection: chat_messages
+- content: string
+- created_at: date
+- meta: object
+- role: string
+- session_id: objectId
+- user_id: objectId
+
+Collection: chat_sessions
+- created_at: date
+- last_used_at: date
+- title: string
+- updated_at: date
+- user_id: objectId
+
+Collection: collection_items
+- added_at: date
+- collection_id: objectId
+- paper_id: objectId
+
+Collection: collections
+- created_at: date
+- name: string
+- position: number
+- tags: array
+- user_id: objectId
+
+Collection: compliance_access_reviews
+- admin_id: objectId
+- created_at: date
+- notes: string
+- scope: string
+
+Collection: compliance_badges
+- evidence: array
+- name: string
+- status: string
+- updated_at: date
+
+Collection: compliance_pii_scans
+- breakdown: object
+- created_at: date
+- email_count: number
+- ip_count: number
+- phone_count: number
+- source: string
+
+Collection: compliance_purge_runs
+- completed_at: date
+- created_at: date
+- records_deleted: number
+- status: string
+
+Collection: compliance_error_scans
+- created_at: date
+- error_count: number
+- line_count: number
+- recent_errors: array
+- recent_warnings: array
+- source: string
+- warning_count: number
+
+Collection: compliance_db_scans
+- collections: number
+- connections: object
+- created_at: date
+- db_latency_ms: number
+- db_ok: boolean
+- source: string
+
+Collection: compliance_api_scans
+- created_at: date
+- range_days: number
+- status_4xx: number
+- status_5xx: number
+- total_requests: number
+- top_endpoints: array
+- source: string
+
+Collection: compliance_frontend_scans
+- build_mtime: number or null
+- build_present: boolean
+- created_at: date
+- dist_mtime: number or null
+- dist_present: boolean
+- source: string
+
+Collection: compliance_dependency_scans
+- created_at: date
+- files: array
+- note: string
+- source: string
+- status: string
+
+Collection: compliance_storage_scans
+- artifacts_bytes: number or null
+- created_at: date
+- disk_free: number or null
+- disk_total: number or null
+- disk_used: number or null
+- source: string
+- uploads_bytes: number or null
+
+Collection: compliance_auth_scans
+- admin_sessions: number
+- blocked_ips: number
+- created_at: date
+- critical_flags: number
+- recent_admin_logins: number
+- source: string
+- user_sessions: number
+
+Collection: downloads
+- created_at: date
+- format: string
+- paper_id: objectId
+- user_id: objectId
+
+Collection: feedback
+- attachments: array
+- created_at: date
+- message: string
+- type: string
+- user_id: objectId
+
+Collection: lit_reviews
+- (no documents found)
+
+Collection: notes
+- content: string
+- created_at: date
+- paper_id: objectId
+- user_id: objectId
+
+Collection: paper_comparisons
+- (no documents found)
+
+Collection: paper_graph
+- (no documents found)
+
+Collection: paper_summaries
+- content: string
+- created_at: date
+- model: string
+- paper_id: objectId
+- paper_uid: string
+- query_id: objectId
+- summary_type: string
+- tokens_used: number
+- user_id: objectId
+
+Collection: papers
+- abstract: null or string
+- authors: array
+- created_at: date
+- kind: string
+- paper_uid: string
+- query_created_at: date
+- query_id: objectId
+- rank: number
+- source: string
+- subject_area: string
+- title: string
+- url: string
+- user_id: objectId
+- venue: null or string
+- year: null or number
+
+Collection: password_resets
+- (no documents found)
+
+Collection: queries
+- confidence: number
+- created_at: date
+- file: null or object
+- gpt_answer: null
+- input_text: string
+- input_type: string
+- papers: array
+- predicted_topics: array
+- subject_area: string
+- text: string
+- top_predictions: array
+- user_id: objectId
+
+Collection: reading_queue
+- (no documents found)
+
+Collection: recommendations
+- (no documents found)
+
+Collection: refresh_tokens
+- created_at: date
+- expires_at: date
+- ip: string
+- revoked: boolean
+- revoked_at: date or null
+- token_hash: string
+- user_agent: string
+- user_id: objectId
+
+Collection: sessions_admin
+- (no documents found)
+
+Collection: system_health_meta
+- updated_at: date
+- value: number
+
+Collection: system_health_snapshots
+- cpu_pct: number
+- db_latency_ms: number
+- db_ok: boolean
+- disk_free: object
+- disk_total: object
+- disk_used: object
+- mem_total: object
+- mem_used: object
+- gemini_latency_ms: null or number
+- gemini_ok: boolean
+- redis_ok: null
+- ts: date
+
+Collection: users
+- created_at: date
+- email: string
+- is_active: boolean
+- is_verified: boolean
+- last_login_at: date or null
+- name: string
+- password_hash: string
+- role: string
+- updated_at: date

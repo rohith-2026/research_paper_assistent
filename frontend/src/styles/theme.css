@@ -1,0 +1,78 @@
+:root {
+  color-scheme: dark;
+
+  /* =========================
+     BACKGROUND
+  ========================== */
+  --bg0: #0f2027;      /* main dark */
+  --bg1: #07161a;      /* deeper dark */
+  --bg2: #142a33;      /* mid layer for gradients */
+
+  /* =========================
+     BRAND / ACCENT
+  ========================== */
+  --accent: #28623a;
+  --accent2: #2f7b46;
+  --accent3: #34d399; /* lighter green used for highlights */
+  --accentGlow: rgba(40, 98, 58, 0.55);
+
+  /* =========================
+     TEXT
+  ========================== */
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.68);
+  --soft: rgba(255, 255, 255, 0.48);
+  --disabled: rgba(255, 255, 255, 0.32);
+
+  /* =========================
+     SURFACES
+  ========================== */
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass2: rgba(255, 255, 255, 0.04);
+  --glass3: rgba(0, 0, 0, 0.20); /* for inputs */
+  --border: rgba(255, 255, 255, 0.12);
+  --border2: rgba(255, 255, 255, 0.18);
+
+  /* =========================
+     RADIUS
+  ========================== */
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  /* =========================
+     SHADOWS
+  ========================== */
+  --shadow-lg: 0 26px 80px rgba(0, 0, 0, 0.55);
+  --shadow-md: 0 14px 40px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 38px rgba(40, 98, 58, 0.28);
+
+  /* =========================
+     FOCUS RING
+  ========================== */
+  --focus: 0 0 0 5px rgba(40, 98, 58, 0.22);
+
+  /* =========================
+     STATUS COLORS
+  ========================== */
+  --danger: #ff5c5c;
+  --warning: #ffce47;
+  --success: #34d399;
+
+  /* =========================
+     GRADIENTS
+  ========================== */
+  --grad-main: linear-gradient(135deg, var(--bg0) 0%, var(--bg2) 45%, var(--bg0) 100%);
+  --grad-accent: linear-gradient(135deg, rgba(40,98,58,0.95), rgba(40,98,58,0.65));
+  --radial-1: radial-gradient(circle at 18% 15%, rgba(40,98,58,0.30) 0%, transparent 55%);
+  --radial-2: radial-gradient(circle at 85% 80%, rgba(40,98,58,0.18) 0%, transparent 60%);
+
+  /* =========================
+     MOTION TOKENS
+  ========================== */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --t-fast: 140ms;
+  --t-med: 220ms;
+  --t-slow: 420ms;
+}

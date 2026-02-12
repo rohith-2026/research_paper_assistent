@@ -1,0 +1,152 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e5]:
+    - generic [ref=e7]:
+      - generic [ref=e8]: RA
+      - generic [ref=e9]:
+        - heading "Research Assistant" [level=1] [ref=e10]
+        - paragraph [ref=e11]: AI-Powered
+    - navigation [ref=e12]:
+      - generic [ref=e13]:
+        - generic [ref=e14]: Core
+        - generic [ref=e15]:
+          - link "Home" [ref=e16] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e17]
+            - generic [ref=e20]: Home
+          - link "Query Text" [ref=e21] [cursor=pointer]:
+            - /url: /dashboard/query-text
+            - img [ref=e22]
+            - generic [ref=e25]: Query Text
+          - link "Query File" [ref=e26] [cursor=pointer]:
+            - /url: /dashboard/query-file
+            - img [ref=e27]
+            - generic [ref=e30]: Query File
+          - link "Query Result" [ref=e31] [cursor=pointer]:
+            - /url: /dashboard/query-result
+            - img [ref=e32]
+            - generic [ref=e35]: Query Result
+          - link "History" [ref=e36] [cursor=pointer]:
+            - /url: /dashboard/history
+            - img [ref=e37]
+            - generic [ref=e41]: History
+          - link "Paper Explorer" [ref=e42] [cursor=pointer]:
+            - /url: /dashboard/paper-explorer
+            - img [ref=e43]
+            - generic [ref=e48]: Paper Explorer
+          - link "Paper Detail" [ref=e49] [cursor=pointer]:
+            - /url: /dashboard/paper-detail
+            - img [ref=e50]
+            - generic [ref=e52]: Paper Detail
+          - link "Paper Summary" [ref=e53] [cursor=pointer]:
+            - /url: /dashboard/paper-summary
+            - img [ref=e54]
+            - generic [ref=e58]: Paper Summary
+      - generic [ref=e59]:
+        - generic [ref=e60]: Intelligence
+        - generic [ref=e61]:
+          - link "Analytics" [ref=e62] [cursor=pointer]:
+            - /url: /dashboard/analytics
+            - img [ref=e63]
+            - generic [ref=e65]: Analytics
+          - link "Connected Graph" [ref=e66] [cursor=pointer]:
+            - /url: /dashboard/connected-graph
+            - img [ref=e67]
+            - generic [ref=e72]: Connected Graph
+          - link "AI Chatbot" [ref=e73] [cursor=pointer]:
+            - /url: /dashboard/chatbot
+            - img [ref=e74]
+            - generic [ref=e76]: AI Chatbot
+          - link "Notes" [ref=e77] [cursor=pointer]:
+            - /url: /dashboard/notes
+            - img [ref=e78]
+            - generic [ref=e81]: Notes
+      - generic [ref=e82]:
+        - generic [ref=e83]: Productivity
+        - generic [ref=e84]:
+          - link "Collections" [ref=e85] [cursor=pointer]:
+            - /url: /dashboard/collections
+            - img [ref=e86]
+            - generic [ref=e88]: Collections
+          - link "Downloads" [ref=e89] [cursor=pointer]:
+            - /url: /dashboard/downloads
+            - img [ref=e90]
+            - generic [ref=e93]: Downloads
+          - link "Feedback" [ref=e94] [cursor=pointer]:
+            - /url: /dashboard/feedback
+            - img [ref=e95]
+            - generic [ref=e97]: Feedback
+      - generic [ref=e98]:
+        - generic [ref=e99]: Account
+        - generic [ref=e100]:
+          - link "Profile" [ref=e101] [cursor=pointer]:
+            - /url: /dashboard/profile
+            - img [ref=e102]
+            - generic [ref=e105]: Profile
+          - link "Settings" [ref=e106] [cursor=pointer]:
+            - /url: /dashboard/settings
+            - img [ref=e107]
+            - generic [ref=e110]: Settings
+    - generic [ref=e111]:
+      - generic [ref=e112]:
+        - generic [ref=e113]: E2
+        - generic [ref=e114]:
+          - generic [ref=e115]: E2E User
+          - generic [ref=e116]: e2e_1770580015640@example.com
+      - button "Logout" [ref=e117] [cursor=pointer]:
+        - img [ref=e118]
+        - generic [ref=e121]: Logout
+  - generic [ref=e122]:
+    - generic [ref=e124]:
+      - generic [ref=e127]: Active Session
+      - button "E2 E2E User e2e_1770580015640@example.com" [ref=e129] [cursor=pointer]:
+        - generic [ref=e130]: E2
+        - generic [ref=e131]:
+          - generic [ref=e132]: E2E User
+          - generic [ref=e133]: e2e_1770580015640@example.com
+        - img [ref=e134]
+    - main [ref=e136]:
+      - generic [ref=e140]:
+        - generic [ref=e141]:
+          - generic [ref=e142]: Research Query
+          - generic [ref=e143]:
+            - heading "Analyze Text" [level=2] [ref=e144]
+            - paragraph [ref=e145]: Paste a question or section of text and get subject predictions with top papers.
+          - button "Split view" [ref=e146] [cursor=pointer]
+        - generic [ref=e147]:
+          - generic [ref=e148]: Input mode
+          - generic [ref=e149]:
+            - button "Question" [ref=e150] [cursor=pointer]
+            - button "Full text" [ref=e151] [cursor=pointer]
+        - generic [ref=e152]:
+          - generic [ref=e153]: Suggestions
+          - generic [ref=e154]:
+            - button "Summarize recent advances in graph neural networks for citation recommendation." [ref=e155] [cursor=pointer]
+            - button "What are the key challenges in large language model alignment?" [ref=e156] [cursor=pointer]
+            - 'button "Survey of federated learning in healthcare: privacy, security, and performance." [ref=e157] [cursor=pointer]'
+            - button "Explain diffusion models for image generation and their evaluation metrics." [ref=e158] [cursor=pointer]
+        - generic [ref=e160]:
+          - textbox "Enter your research question..." [ref=e161]
+          - generic [ref=e162]:
+            - generic [ref=e163]: 0 / 20000 characters
+            - generic [ref=e164]: "Words: 0"
+            - generic [ref=e165]: "Reading time: ~1 min"
+            - generic [ref=e166]: "Tip: Cmd/Ctrl + Enter to submit"
+          - generic [ref=e167]: Draft saved just now
+          - generic [ref=e169]:
+            - generic [ref=e170]:
+              - generic [ref=e171]: 1. Input
+              - generic [ref=e172]: 2. Analyze
+              - generic [ref=e173]: 3. Results
+            - generic [ref=e174]:
+              - button "Paste" [ref=e175] [cursor=pointer]
+              - button "Clear" [disabled] [ref=e176] [cursor=pointer]:
+                - img [ref=e177]
+                - text: Clear
+              - button "Analyze" [disabled] [ref=e180]:
+                - img [ref=e181]
+                - text: Analyze
+    - button "Open Chatbot" [ref=e185] [cursor=pointer]: Chat
+```
