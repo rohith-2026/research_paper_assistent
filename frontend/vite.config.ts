@@ -13,6 +13,7 @@ export default defineConfig({
     allowedHosts: [
       ".trycloudflare.com", // ✓ allow trycloudflare tunnel domains
       ".ngrok-free.dev",    // allow ngrok tunnel domains
+      "autogenetic-mercedez-pseudocharitable.ngrok-free.dev"
     ],
   },
 });
