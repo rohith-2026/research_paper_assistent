@@ -9,8 +9,12 @@ from passlib.context import CryptContext
 from app.core.config import settings
 from app.core.time_utils import now_ist
 
-# OK Use Argon2 (no 72-byte limit)
-pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
+# Use a dependency-safe default for new hashes and retain support for older
+# bcrypt/argon2 hashes that may already exist in the database.
+pwd_context = CryptContext(
+    schemes=["pbkdf2_sha256", "bcrypt", "argon2"],
+    deprecated="auto",
+)
 
 
 def now_utc() -> datetime:
@@ -36,9 +40,11 @@ def create_access_token(data: Dict[str, Any]) -> str:
 def create_admin_access_token(data: Dict[str, Any], minutes: int | None = None) -> str:
     payload = data.copy()
     payload["type"] = "admin_access"
-    expire_minutes = minutes if minutes is not None else getattr(settings, "ADMIN_ACCESS_TOKEN_EXPIRE_MINUTES", 0)
-    if expire_minutes and expire_minutes > 0:
-        payload["exp"] = now_utc() + timedelta(minutes=expire_minutes)
+    default_minutes = getattr(settings, "ADMIN_ACCESS_TOKEN_EXPIRE_MINUTES", 15)
+    expire_minutes = minutes if minutes is not None else default_minutes
+    if not expire_minutes or expire_minutes <= 0:
+        expire_minutes = 15
+    payload["exp"] = now_utc() + timedelta(minutes=expire_minutes)
     return jwt.encode(payload, settings.JWT_SECRET, algorithm=settings.JWT_ALGORITHM)
 
 
