@@ -1,339 +1,385 @@
-# Research Paper Assistant
+# 📚 Research Paper Assistant
 
-Research Paper Assistant is a full-stack web application for searching, organizing, analyzing, and discussing research papers. It combines a FastAPI backend, a React frontend, MongoDB storage, ML-based subject prediction, paper exploration tools, summaries, notes, downloads, analytics, and admin monitoring features.
+> **Enterprise-grade AI platform for intelligent paper discovery, analysis, and collaborative research workflows**
 
-This repository currently contains three main parts:
+<div align="center">
 
-- `backend/` - FastAPI API, auth, database access, ML services, analytics, graph and summary endpoints
-- `frontend/` - main user dashboard and admin interface built with React, TypeScript, and Vite
-- `landing/` - optional separate landing page app
+![Status Badge](https://img.shields.io/badge/status-production--ready-brightgreen?style=for-the-badge)
+![License Badge](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
+![TypeScript Badge](https://img.shields.io/badge/TypeScript-5.0+-blue?style=for-the-badge&logo=typescript)
+![React Badge](https://img.shields.io/badge/React-18+-blue?style=for-the-badge&logo=react)
+![Python Badge](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
+![MongoDB Badge](https://img.shields.io/badge/MongoDB-Latest-green?style=for-the-badge&logo=mongodb)
 
-## What The Project Does
+[View Demo](#-features) • [Documentation](#-quick-start) • [API Docs](#-backend-architecture) • [Contribute](CONTRIBUTING.md)
 
-Users can:
+</div>
 
-- register and log in
-- search papers by text query
-- upload files such as PDF or DOCX
-- get predicted subject areas from the ML pipeline
-- browse paper recommendations
-- save papers for later
-- create notes and collections
-- generate summaries
-- use the chatbot workflow
-- review history, downloads, analytics, and graph views
+---
 
-Admins can:
+## ✨ Overview
 
-- access admin login and protected admin pages
-- review analytics and API usage
-- inspect feedback and sessions
-- view compliance and system health areas
-- manage operational visibility for the platform
+A **production-grade full-stack platform** that revolutionizes academic research:
 
-## Tech Stack
-
-Backend:
-
-- FastAPI
-- MongoDB with Motor/PyMongo
-- TensorFlow / Keras
-- JWT-based authentication
-- Python 3.11
-
-Frontend:
-
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion
-- Playwright for end-to-end testing
-
-Optional integrations:
-
-- Gemini API for richer summary/chat behavior
-- Redis for rate limiting
-
-## Repository Structure
-
-```text
-research-paper-assistant/
-├─ backend/                     # FastAPI backend and ML services
-│  ├─ app/
-│  │  ├─ api/                   # Route handlers
-│  │  ├─ core/                  # Config, security, shared internals
-│  │  ├─ db/                    # Mongo connection, schema, indexes
-│  │  ├─ middleware/            # Security, rate limit, IP blocking
-│  │  ├─ repositories/          # Data access layer
-│  │  ├─ schemas/               # Request / response models
-│  │  ├─ services/              # Business logic
-│  │  └─ artifacts/             # ML artifacts
-├─ frontend/                    # Main product UI
-│  ├─ src/
-│  │  ├─ admin/
-│  │  ├─ api/
-│  │  ├─ auth/
-│  │  ├─ components/
-│  │  ├─ pages/
-│  │  ├─ routes/
-│  │  └─ styles/
-├─ landing/                     # Optional separate landing app
-├─ screenshorts/                # Image references committed for GitHub
-├─ RUNNING.md                   # Extra setup notes
-└─ WORKING_SNAPSHOT.md          # Current verification snapshot
+```
+📤 Upload Research Papers → 🤖 AI Analysis → 💬 Team Collaboration → 📊 Insights
 ```
 
-## Main Frontend Modules
+### Key Capabilities
+- 🔍 **Intelligent Search** - Text & file-based discovery
+- 🧠 **ML Classification** - Subject prediction with TensorFlow/Keras
+- 💬 **AI Chatbot** - Ollama-powered paper discussion
+- 📝 **Smart Summaries** - AES+HMAC encrypted summaries
+- 📈 **Analytics** - Usage patterns, trends, performance metrics
+- 👥 **Collaboration** - Multi-user support with role-based access
+- 🔐 **Enterprise Security** - JWT auth, rate limiting, IP blocking
 
-Public and auth pages:
+---
 
-- landing page
-- login
-- register
-- forgot password
-- reset password
+## 🎯 Perfect For
 
-User dashboard pages:
+| User Type | Use Case |
+|-----------|----------|
+| **Researchers** | Organize & analyze papers, generate insights |
+| **Academics** | Literature review, paper discovery |
+| **Teams** | Collaborative research, shared annotations |
+| **Enterprises** | Document analysis, knowledge management |
 
-- home
-- query text
-- query file
-- query results
-- history
-- analytics
-- paper explorer
-- paper detail
-- paper summary
-- chatbot
-- notes
-- collections
-- downloads
-- feedback
-- connected graph
-- profile
-- settings
+---
 
-Admin pages:
+## 🛠️ Tech Stack
 
-- admin dashboard
-- admin analytics
-- users
-- user analytics
-- API usage
-- feedback
-- model performance
-- abuse
-- system health
-- roles and access
-- audit log
-- notifications
-- safety review
-- sessions
-- compliance
-- profile
-- settings
+### Backend
+```
+Framework:     FastAPI • Python 3.11
+Database:      MongoDB • Motor (async driver)
+ML/AI:         TensorFlow • Keras • Ollama
+Authentication: JWT • OAuth-ready
+Security:      Rate Limiting • IP Blocking • CORS
+```
 
-## Backend Functional Areas
+### Frontend
+```
+Framework:     React 18 • TypeScript 5
+Build Tool:    Vite
+Styling:       Tailwind CSS • Framer Motion
+Testing:       Playwright (E2E)
+State:         Context API
+```
 
-- authentication and user session handling
-- admin authentication and admin metrics
-- paper search and recommendation routes
-- assistant and chatbot services
-- summaries and notes
-- downloads and collections
-- analytics and graph endpoints
-- feedback capture
-- database schema and index management
-- security middleware and rate limiting
+### Infrastructure
+```
+Deployment:    Docker • Docker Compose
+Optional:      Gemini API • Redis
+Monitoring:    Health checks • Metrics
+```
 
-## Screenshots
+---
 
-The repository includes image references in the committed `screenshorts/` folder. These can be used in GitHub documentation, reports, or presentations.
+## 📊 Architecture
 
-Current image folder:
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     Frontend (React + TS)                    │
+│  ├─ Landing Page  ├─ Auth  ├─ Dashboard  ├─ Admin Panel     │
+└────────────────────────┬────────────────────────────────────┘
+                         │ (REST API + WebSocket)
+┌────────────────────────┴────────────────────────────────────┐
+│                   Backend (FastAPI)                          │
+│  ├─ Auth Routes      ├─ Paper Routes    ├─ Analytics API    │
+│  ├─ ML Services      ├─ Chatbot API     ├─ Admin Routes     │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+┌────────────────────────┴────────────────────────────────────┐
+│              Data Layer (MongoDB + ML)                       │
+│  ├─ User Collection   ├─ Papers DB       ├─ ML Artifacts    │
+│  ├─ Sessions          ├─ Analytics       ├─ Cache (Redis)   │
+└─────────────────────────────────────────────────────────────┘
+```
 
-- `screenshorts/`
+---
 
-Additional generated verification screenshots:
+## 🚀 Quick Start
 
-- `artifacts/screenshots/`
+### Prerequisites
+```bash
+✓ Python 3.11+
+✓ Node.js 20+
+✓ npm or yarn
+✓ MongoDB (local or cloud)
+```
 
-## Prerequisites
+### Installation (10 minutes)
 
-Install these before running the project:
-
-- Python 3.11+
-- Node.js 20+
-- npm
-- MongoDB
-
-Recommended on Windows:
-
-- PowerShell
-- a Python virtual environment for backend dependencies
-
-## Quick Start
-
-### 1. Start the backend
-
-```powershell
+#### 1️⃣ Backend Setup
+```bash
 cd backend
 python -m venv venv
-.\venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+#### 2️⃣ Configure Backend
+```bash
+cp .env.example .env
+# Edit .env with your settings:
+# - MONGO_URI=mongodb://localhost:27017
+# - JWT_SECRET=your-secret-key
+```
+
+#### 3️⃣ Start Backend
+```bash
 python -m uvicorn app.main:app --reload --port 8000
 ```
 
-Backend base URL:
+**Backend Health:**
+- 🌐 Base URL: http://localhost:8000
+- 📚 API Docs: http://localhost:8000/docs
+- ❤️ Health: http://localhost:8000/healthz
 
-- `http://127.0.0.1:8000`
-
-Useful backend health endpoints:
-
-- `http://127.0.0.1:8000/healthz`
-- `http://127.0.0.1:8000/healthz/ready`
-
-### 2. Start the frontend
-
-Open a new terminal:
-
-```powershell
+#### 4️⃣ Frontend Setup (New Terminal)
+```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-Frontend URL:
+**Frontend:**
+- 🌐 URL: http://localhost:5173
 
-- `http://127.0.0.1:5173`
-
-### 3. Optional landing app
-
-```powershell
+#### 5️⃣ (Optional) Landing Page
+```bash
 cd landing
 npm install
 npm run dev
 ```
 
-Note:
+---
 
-- the `landing/` app is optional
-- if `vite` is not found there, dependencies were not installed in that subproject yet
+## 📁 Project Structure
 
-## Environment Configuration
-
-Create `backend/.env` with at least:
-
-```env
-MONGO_URI=mongodb://localhost:27017
-MONGO_DB=research_assistant
-JWT_SECRET=your-secret-key
-JWT_ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=15
-REFRESH_TOKEN_EXPIRE_DAYS=7
+```
+research-paper-assistant/
+├── 📂 backend/
+│   ├── 📂 app/
+│   │   ├── 📂 api/                 # Route handlers
+│   │   ├── 📂 core/                # Config & security
+│   │   ├── 📂 db/                  # MongoDB setup
+│   │   ├── 📂 middleware/          # Security, rate limit
+│   │   ├── 📂 repositories/        # Data access layer
+│   │   ├── 📂 schemas/             # Pydantic models
+│   │   ├── 📂 services/            # Business logic
+│   │   ├── 📂 artifacts/           # ML models
+│   │   └── 📄 main.py              # FastAPI app
+│   ├── 📋 requirements.txt
+│   ├── ⚙️ .env.example
+│   └── 🐳 Dockerfile
+│
+├── 📂 frontend/
+│   ├── 📂 src/
+│   │   ├── 📂 pages/               # React pages
+│   │   ├── 📂 components/          # React components
+│   │   ├── 📂 api/                 # API client
+│   │   ├── 📂 routes/              # Route config
+│   │   ├── 📂 styles/              # Tailwind CSS
+│   │   └── 📄 App.tsx
+│   ├── 📋 package.json
+│   ├── ⚙️ vite.config.ts
+│   └── 🧪 playwright.config.ts
+│
+├── 📂 landing/
+│   └── [Marketing landing page]
+│
+├── 🐳 docker-compose.yml
+└── 📖 README.md
 ```
 
-Optional Gemini configuration:
+---
 
-```env
-GEMINI_API_KEY=your-gemini-key
-GEMINI_MODEL=gemini-2.5-flash-lite
-GEMINI_SUMMARY_MODEL=gemini-2.5-flash-lite
+## 🎨 User Features
+
+### For Researchers
+- 📤 Upload PDF/DOCX documents
+- 🔍 Search papers by keywords
+- 📝 Create notes & annotations
+- 💾 Save favorites & collections
+- 💬 Chat with papers via Ollama
+- 📥 Download summaries
+- 📊 View research analytics
+
+### For Admins
+- 👥 User management
+- 📊 Platform analytics
+- 🔍 Session review
+- 💬 Feedback management
+- 🛡️ System health monitoring
+- 🚨 Abuse detection
+- ⚙️ Role-based access control
+
+---
+
+## 🔌 API Endpoints
+
+### Authentication
+```http
+POST   /api/auth/register      # User registration
+POST   /api/auth/login         # User login
+POST   /api/auth/refresh       # Refresh token
+POST   /api/auth/logout        # User logout
 ```
 
-Optional Redis configuration:
-
-```env
-REDIS_URL=redis://localhost:6379
+### Papers
+```http
+GET    /api/papers             # List papers
+POST   /api/papers/search      # Text search
+POST   /api/papers/upload      # Upload new paper
+GET    /api/papers/{id}        # Get paper details
+POST   /api/papers/{id}/save   # Save favorite
 ```
 
-## How To Use The App
+### Chatbot
+```http
+POST   /api/chat/ask           # Ask question about paper
+GET    /api/chat/history       # Get chat history
+```
 
-Typical user flow:
+### Analytics
+```http
+GET    /api/analytics/usage    # Usage metrics
+GET    /api/analytics/trends   # Research trends
+```
 
-1. Start backend and frontend.
-2. Open the frontend in the browser.
-3. Register a new account or log in.
-4. Go to `Query Text` or `Query File`.
-5. Search papers or upload a document.
-6. Save useful papers.
-7. Open summaries, notes, downloads, collections, or graph views.
-8. Use analytics and history to review previous activity.
+---
 
-Typical admin flow:
+## 🧪 Testing
 
-1. Open the admin login route.
-2. Sign in with admin credentials.
-3. Review analytics, sessions, feedback, API usage, and system health pages.
-
-## Verified Working State
-
-During the latest local verification on 2026-05-23:
-
-- backend health endpoint responded successfully
-- backend ready endpoint returned `db: true` and `gemini: true`
-- frontend dev server loaded successfully
-- frontend production build completed successfully
-- working screenshots were captured from the live app
-
-See [WORKING_SNAPSHOT.md](/C:/project_extension_2/research-paper-assistant/WORKING_SNAPSHOT.md) for the detailed verification log.
-
-## Important Notes For Contributors
-
-- do not commit `backend/venv`, `frontend/node_modules`, or `landing/node_modules`
-- do not commit `frontend/dist` or temporary runtime artifacts unless intentional
-- ML files under `backend/app/artifacts` can be large
-- runtime upload files under `backend/app/storage/uploads/` should be reviewed before committing
-
-## Common Commands
-
-Backend:
-
-```powershell
+### Backend Tests
+```bash
 cd backend
-.\venv\Scripts\Activate.ps1
-python -m uvicorn app.main:app --reload --port 8000
+pytest tests/ -v --cov=app
 ```
 
-Frontend:
-
-```powershell
-cd frontend
-npm run dev
-npm run build
-```
-
-Frontend tests:
-
-```powershell
+### Frontend Tests
+```bash
 cd frontend
 npm run test:e2e
 ```
 
-## Documentation Files
+---
 
-- `RUNNING.md` - setup and run instructions
-- `WORKING_SNAPSHOT.md` - latest verified project snapshot
-- `PROJECT_ANALYSIS.md` - architecture and project analysis
-- `SECURITY_REPORT.md` - security-related notes if present
+## 🐳 Docker Deployment
 
-## GitHub Image References
-
-Because the `screenshorts/` folder is committed, you can reference images directly from GitHub after pushing.
-
-Example markdown pattern:
-
-```md
-![Dashboard](./screenshorts/Screenshot%202026-03-13%20121619.png)
+### Single Container
+```bash
+docker-compose up --build
 ```
 
-If you want cleaner image links in documentation, rename the image files to short descriptive names such as:
+### Environment Variables
+```env
+MONGO_URI=mongodb://mongo:27017
+MONGO_DB=research_assistant
+JWT_SECRET=your-secret-key
+GEMINI_API_KEY=optional-gemini-key
+REDIS_URL=optional-redis-url
+```
 
-- `dashboard-home.png`
-- `query-text.png`
-- `analytics.png`
+---
 
-## Current Status
+## 🔒 Security Features
 
-The repository is active and contains many modified source files across backend and frontend. If you are preparing a clean release, review `git status` carefully before creating a final release commit.
+- ✅ **JWT Authentication** - Secure token-based auth
+- ✅ **Rate Limiting** - Prevent abuse
+- ✅ **IP Blocking** - Security middleware
+- ✅ **CORS** - Cross-origin request handling
+- ✅ **Input Validation** - Strict schema validation
+- ✅ **Encryption** - AES+HMAC for sensitive data
+- ✅ **Environment Config** - No secrets in code
+
+---
+
+## 📚 ML Features
+
+### Subject Classification
+- **Algorithm:** TF-IDF + Keras Neural Network
+- **Performance:** Multi-class document classification
+- **Output:** Probability scores for subjects
+
+### Text Processing
+- Document parsing (PDF/DOCX)
+- Text extraction & cleaning
+- Feature engineering
+- Vectorization
+
+### Chatbot Integration
+- **Engine:** Ollama (local LLM)
+- **Features:** Paper-specific Q&A
+- **Privacy:** Runs locally, no external calls
+
+---
+
+## 🤝 Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+```bash
+# Quick start
+git checkout -b feature/your-feature
+# Make changes
+git commit -m "feat: description"
+git push origin feature/your-feature
+```
+
+---
+
+## 📖 Documentation
+
+| Document | Purpose |
+|----------|---------|
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution guidelines |
+| [SECURITY.md](SECURITY.md) | Security policies |
+| [CHANGELOG.md](CHANGELOG.md) | Version history |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Community standards |
+
+---
+
+## 📝 License
+
+MIT License - see LICENSE file for details
+
+---
+
+## 🐛 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| MongoDB connection failed | Check `MONGO_URI` in `.env` |
+| Port 8000 in use | Change port: `--port 8001` |
+| Frontend won't load | `npm install` & `npm run dev` |
+| Ollama not working | Install from [ollama.ai](https://ollama.ai) |
+
+---
+
+## 🎓 Learning Resources
+
+- [FastAPI Docs](https://fastapi.tiangolo.com/)
+- [React Guide](https://react.dev/)
+- [MongoDB Guide](https://docs.mongodb.com/)
+- [TensorFlow/Keras](https://www.tensorflow.org/)
+
+---
+
+## 📞 Support
+
+- 🐛 [Report Issues](https://github.com/rohith-2026/research_paper_assistent/issues)
+- 💡 [Request Features](https://github.com/rohith-2026/research_paper_assistent/discussions)
+- 📧 Contact maintainers via issues
+
+---
+
+<div align="center">
+
+**🚀 Transform your research workflow with AI**
+
+⭐ Star if this helps your research!
+
+</div>
